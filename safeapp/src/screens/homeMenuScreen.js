@@ -1,91 +1,67 @@
 import 'react-native-gesture-handler';
-import React,{Component,useState} from 'react';
-import icon from 'react-native-vector-icons/Ionicons';
-import {createAppContainer} from 'react-navigation';
+import React,{Component} from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-// import { createStackNavigator } from '@react-navigation/stack';
 import call from 'react-native-phone-call';
-
-
 import { View,
     Text,
     StyleSheet,
-    // TextInput,
     TouchableOpacity,
-    // Button,
-    // Animated,
-    // ScrollView,
     Image,
-    // Dimensions,
-    // Modal,
     Linking,
 } from 'react-native';
 import Dashboard from './homeMenuDashboard';
-import { YellowBox } from 'react-native';
-import { color } from 'react-native-reanimated';
-import { Card } from 'react-native-elements'
-import BookingTab from './bookingTab';
-import BookingModel from './bookingModal'
 import Icon from 'react-native-vector-icons/Ionicons';
-import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 import CustomerProfile from './homeMenuCustomerProfile';
-import { Title } from 'react-native-paper';
-
-
-// YellowBox.ignoreWarnings([
-//   'Require cycle:'
-// ])
+import BookingTobTab from './bookingTobTab';
+import BookingModal from './bookingModal'
 
 
 
 function HomeScreen(){
-    
     return (
       <Dashboard />
     )
 
 }
 
-
+// function BookingScreen(){
+//     return (
+//         <View style={styles.booking_container}>
+//             <View style={styles.booking_tab}>
+//                 <BookingTab/>
+//             </View>
+//             <View style={styles.booking_add}>
+//                         {/* <BookingModel/> */}
+//                         <View>
+//                           <Text>add</Text>
+//                           </View>
+//             </View>
+//         </View>
+//     )
+// }
 
 function BookingScreen(){
+  return (
+      <View style={styles.booking_container}>
+        <View style={styles.active_list_view}>
+            <BookingTobTab/>
 
-    return (
-        <View style={styles.booking_container}>
-                <View style={{
-                height:'10%',
-                backgroundColor:'tomato',
-                width:'100%',
-                justifyContent:'center',
-                padding:10,
-                fontWeight:'bold',color:'white',
-                // alignItems:'center'
-                }}>
-                <Title style={{marginTop:25,fontWeight:'bold',color:'white',}}>Booking</Title>
         </View>
-            <View style={styles.booking_tab}>
-                <BookingTab/>
-            </View>
-            <View style={styles.booking_add}>
-                        <BookingModel/>
-            </View>
+        <View style={styles.add_new}>
+          <BookingModal/>
+
         </View>
-
-    )
-
+      
+      </View>
+  )
 }
 
-
-
 function ProfileScreen () {
-
     return (
             <CustomerProfile/>
     )
-
 }
-
 
 export class AboutScreen extends Component {
     constructor(props) {
@@ -127,7 +103,7 @@ export class AboutScreen extends Component {
         <View style={styles.container}>
       
   <View>
-                  <Title>About</Title>
+                  <Text>About</Text>
                   </View>
                   <View>
                       <Text style={{paddingLeft:35,marginTop:10}}>
@@ -156,7 +132,7 @@ export class AboutScreen extends Component {
                     style={styles.whatsap_logo}
                     source={require('../assets/whatsapp.png')}/>
             </TouchableOpacity>
-            <Text style={{marginTop:20}}> Msg or Call</Text>
+            <Text style={{marginTop:20,marginBottom:10,fontWeight:'bold'}}> Whatsapp or Call</Text>
             <TouchableOpacity  onPress={this.call}>
                 <Image
                     style={styles.phone_logo}
@@ -168,9 +144,6 @@ export class AboutScreen extends Component {
       );
     }
   }
-  
-         
-    
 
 
 
@@ -233,10 +206,8 @@ const styles = StyleSheet.create({
 
     },
     iconView:{
-        flexDirection:'row',
-        height:300,
-        justifyContent:'space-between',
-        marginTop:10
+        marginTop:10,
+        alignItems:'center'
 
     },
 
@@ -271,6 +242,13 @@ const styles = StyleSheet.create({
         flex:1,
      
     },
+    active_list_view:{
+      flex:10,
+      },
+    add_new:{
+      flex:1,
+    },
+
     booking_tab:{
         flex:8
     },
@@ -293,6 +271,9 @@ const styles = StyleSheet.create({
 
 })
 
+
+
+
 const AppTabs = createBottomTabNavigator();
 const AppTabsScreen=()=> (
     
@@ -304,48 +285,39 @@ const AppTabsScreen=()=> (
             inactiveTintColor: '#808080',
             style: {
                 backgroundColor: 'white',
-                // backgroundColor: '#694fad',
-
               },
 
               labelStyle: {        
                 fontSize: 12,        
                }    
           }}
-       
-        
-       
+          screenOptions={{
+            headerStyle:'tomato'
+          }}
         >
+
         <AppTabs.Screen 
+            name='Home'
             component={HomeScreen}
-            name="Home"
-     
-            
             options={{
-              
-            headerBackTitle: null,
+            navigationOptions: { title: 'Header title' },
             tabBarLabel: 'Home',
             tabBarIcon: ({ color }) => (
                 <Icon   size={25} color={color} name={'md-home'}></Icon>
             ),
-           
-
-        
         }}
+        
         />
 
           <AppTabs.Screen 
           name="Booking" 
           component={BookingScreen} 
      options={{
-                title:'Home',
                 tabBarLabel: 'Booking',
                 tabBarIcon: ({ color }) => (
                     <Icon  size={25} color={color} name={'md-calendar'}></Icon>
-
                 ),
                 }} 
-               
                 />
 
           <AppTabs.Screen 
@@ -358,7 +330,6 @@ const AppTabsScreen=()=> (
               },
             tabBarIcon: ({ color }) => (
                 <Icon  size={25}  color={color} name={'md-person'}></Icon>
-
             ),
             }}
         />
@@ -374,7 +345,6 @@ const AppTabsScreen=()=> (
             ),
             }}
         />
-
         </AppTabs.Navigator>
         )
 

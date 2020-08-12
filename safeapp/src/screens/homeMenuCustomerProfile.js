@@ -50,7 +50,7 @@ class CustomerProfile extends Component {
   render(){
     return (
     <View style={styles.container}>
-      <View style={{
+      {/* <View style={{
                 height:'10%',
                 backgroundColor:'tomato',
                 width:'100%',
@@ -59,7 +59,7 @@ class CustomerProfile extends Component {
                 // alignItems:'center'
                 }}>
                 <Title style={{marginTop:25,fontWeight:'bold',color:'white',}}>Profile</Title>
-        </View>
+        </View> */}
         <View style={styles.profile_container}>
           <View style={styles.image_container}>
           <Image style={styles.image} source={require('../assets/saravanan_sir.jpg')}/>

@@ -18,13 +18,13 @@ class Login extends Component {
         <View style={styles.logocontainer}>
           <Text style={styles.welcome}>Welcome</Text>
           <Image style={styles.logo}
-          source={require('../assets/hacker.png')}
+          source={require('../assets/abc.png')}
           />
           <Text style={styles.title}>PG analytics</Text>
 
         </View>
         <View style={styles.inputcontainer}>
-        <Text style={{fontSize:17,color:'#fff',color:'#1abc9c'}}>Enter your Mobile number</Text>
+        <Text style={{fontSize:17,color:'white',marginLeft:'11%'}}>Enter your Mobile number</Text>
           <View style={styles.inputview}>
             <Text style={styles.prefix}>+91</Text>
             <TextInput
@@ -51,7 +51,7 @@ class Login extends Component {
 const styles = StyleSheet.create({
   container:{
     flex:1,
-    backgroundColor:'#282830',
+    backgroundColor:'#4834DF',
     width:Dimensions.get('window').width,
   },
   logocontainer:{
@@ -72,17 +72,16 @@ const styles = StyleSheet.create({
   },
   welcome:{
     marginBottom:15,
-    color:'#fff',
     fontWeight:'bold',
     fontSize:20,
-    color:'#2980b9'
+    color:'white'
   },
   title:{
     marginTop:15,
     color:'#fff',
     fontWeight:'bold',
     fontSize:20,
-    color:'#2980b9'
+    color:'white'
 
   },
   inputview:{
@@ -105,7 +104,7 @@ const styles = StyleSheet.create({
     fontSize:20,
     color:'green',
     fontWeight:'bold',
-    color:'#2980b9'
+    color:'black'
     
   },
   submit:{

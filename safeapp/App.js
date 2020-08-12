@@ -2,7 +2,7 @@
 
 import React from 'react';
 import { createAppContainer } from 'react-navigation';
-import { createStackNavigator, HeaderBackground } from 'react-navigation-stack';
+import { createStackNavigator, HeaderBackButton } from 'react-navigation-stack';
 import loginScreen from './src/screens/loginScreen';
 import OTPScreen from './src/screens/OTPscreen';
 import homeMenuScreen from './src/screens/homeMenuScreen';
@@ -24,26 +24,25 @@ const navigator = createStackNavigator(
     }
 
   },
-    Menu:{
-    screen:homeMenuScreen,
-    navigationOptions:{
-      // headerShown: false
-      title:'Home',
-      headerBackgroundColor:'tomato'
-    }
-
+  Menu:{
+  screen:homeMenuScreen,
+  navigationOptions:{
+    title:'Home',
+    headerTintColor: '#fff',
+    headerLeft: null ,
+    headerStyle: {
+      backgroundColor: 'tomato',
+    },
   },
-
-   
+},
 },
 
 {
-
 initialRouteName:'Login',
-// defaultNavigationOptions:{
-// title:'Blogs'
-// } 
-  
+defaultNavigationOptions:{
+title:null,
+headerBackgroundColor:'tomato'
+} 
 },
 );
 

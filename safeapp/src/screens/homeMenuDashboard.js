@@ -51,22 +51,18 @@ export class Dashboard extends Component {
         return (
        
         <View style={styles.container}>
-            <View style={{height:'10%',backgroundColor:'tomato',width:'100%',justifyContent:'center',padding:10,}}>
-                <Title style={{marginTop:25,fontWeight:'bold',color:'white'}}>Home</Title>
-                </View>
            <View style={styles.welcome}>
                 <View style={styles.welcontent}>
                     <View style={{flexDirection:'row'}}>
-                    <Text style={{fontSize:30}}>{this.state.greeting}</Text>
-                    <Image style={styles.welcome_icon} source={require('../assets/call-center-agent.png')} size={10}/>
+                    <Text style={{fontSize:20,fontWeight:'bold'}}>{this.state.greeting}</Text>
+                    <Image style={styles.welcome_icon} source={require('../assets/call-center-agent.png')} size={20}/>
                     </View>
-                        <Text style={{fontSize:25,textAlign:'center'}}>Mr.saravanan</Text>
-                    <Text style={{fontSize:15,textAlign:'center',marginVertical:10}}>Our offer was almost reasonable. </Text>
+                        <Text style={{color:'blue',fontSize:25,textAlign:'center'}}>Mr.saravanan</Text>
+                    <Text style={{ color:'green',fontSize:15,textAlign:'center',marginVertical:10}}>Our offer was almost reasonable. </Text>
                 </View>
            </View>
            <View style={styles.offers}>
                <View style={{alignItems:'center'}}>
-                
                <Text style={{fontSize:20,fontWeight:'bold',color:'tomato'}}>Offers</Text>
                </View>
                  <OfferCarousal/>
@@ -99,20 +95,17 @@ const styles = StyleSheet.create({
     },
     welcome:{
         flex:3,
-        // backgroundColor:'#4444ff',
         backgroundColor:'tomato',
         borderBottomLeftRadius:50,
         borderBottomRightRadius:50,
-        // backgroundColor:'white',
         width:'100%',
-        // height:'30%',
         justifyContent:'center',
         alignItems:'center',
         
     },
     offers:{
         flex:3,
-        // marginTop:10,
+        marginTop:'15%',
         padding:10
 
 
@@ -134,16 +127,12 @@ const styles = StyleSheet.create({
         
     },
     welcontent:{
-        // flex:1,
         padding:10,
         backgroundColor:'white',
-        width:'80%',
+        width:'60%',
         height:'70%',
-        // borderTopLeftRadius:20,
-        // borderTopRightRadius:20
         borderRadius:20,
-        borderColor:'white', // if you need 
-        // borderWidth:10,
+        marginTop:'40%'
 
     },
     namecontent:{
