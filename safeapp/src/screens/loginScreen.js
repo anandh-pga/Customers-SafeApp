@@ -35,7 +35,7 @@ class loginScreen extends Component {
               />
             </View>
           <View style={styles.submit}>
-            <TouchableOpacity style={styles.login_arrow} onPress={()=>this.props.navigation.navigate('OTP')}>
+            <TouchableOpacity style={styles.login_arrow} onPress={()=>this.props.navigation.navigate('OTPScreen')}>
                 <Icon name="arrow-right" color='white' size={24}/>
             </TouchableOpacity>
           </View>
