@@ -22,7 +22,7 @@ class Login extends Component {
           />
           <Text style={styles.title}>PG analytics</Text>
 
-        </View>
+        </View> 
         <View style={styles.inputcontainer}>
           <Text style={{fontSize:17,color:'white',marginLeft:'11%'}}>Enter your Mobile number</Text>
             <View style={styles.inputview}>

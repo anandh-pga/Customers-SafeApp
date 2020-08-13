@@ -21,7 +21,7 @@ export default class OTPScreen extends Component {
     return(
       <ScrollView>
       <View style={styles.container}>
-
+ 
         <View style={styles.otpscreen}>
 
           <View style={styles.text}>

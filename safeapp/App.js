@@ -5,7 +5,6 @@ import loginScreen from './src/screens/loginScreen';
 import OTPScreen from './src/screens/OTPscreen';
 import homeMenuScreen from './src/screens/homeMenuScreen';
 
-
 const navigator = createStackNavigator(
   {
 
