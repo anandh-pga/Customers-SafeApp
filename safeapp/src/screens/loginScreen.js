@@ -24,21 +24,21 @@ class Login extends Component {
 
         </View>
         <View style={styles.inputcontainer}>
-        <Text style={{fontSize:17,color:'white',marginLeft:'11%'}}>Enter your Mobile number</Text>
-          <View style={styles.inputview}>
-            <Text style={styles.prefix}>+91</Text>
-            <TextInput
-            style={styles.input}
-            keyboardType="numeric"
-            underlineColorAndroid={'transparent'}
+          <Text style={{fontSize:17,color:'white',marginLeft:'11%'}}>Enter your Mobile number</Text>
+            <View style={styles.inputview}>
+              <Text style={styles.prefix}>+91</Text>
+              <TextInput
+              style={styles.input}
+              keyboardType="numeric"
+              underlineColorAndroid={'transparent'}
 
-            />
-          </View>
-        <View style={styles.submit}>
-          <TouchableOpacity style={styles.login_arrow} onPress={()=>this.props.navigation.navigate('OTP')}>
-              <Icon name="arrow-right" color='white' size={24}/>
-              </TouchableOpacity>
+              />
             </View>
+          <View style={styles.submit}>
+            <TouchableOpacity style={styles.login_arrow} onPress={()=>this.props.navigation.navigate('OTP')}>
+                <Icon name="arrow-right" color='white' size={24}/>
+            </TouchableOpacity>
+          </View>
         </View>
 
       </View>

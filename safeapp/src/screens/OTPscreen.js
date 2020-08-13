@@ -1,7 +1,7 @@
 
 import React, { Component } from 'react'
-import { View, TextInput, Text,StyleSheet} from 'react-native'
-import { ScrollView } from 'react-native-gesture-handler';
+import { View, TextInput, Text,StyleSheet, ScrollView} from 'react-native'
+//import { ScrollView } from 'react-native-gesture-handler';
 
 
 export default class OTPScreen extends Component {
