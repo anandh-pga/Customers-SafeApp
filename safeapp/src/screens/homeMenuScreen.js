@@ -21,12 +21,34 @@ import BookingModal from './bookingModal'
 
 const Stack = createStackNavigator();
 
-
+/*
 function HomeScreen(){
     return (
       <Dashboard />
     )
 
+}
+*/
+class HomeScreen extends Component{
+  render(){
+    return(
+      <Stack.Navigator>
+        <Stack.Screen name="Dashboard" component={Dashboard}
+          options={{
+            headerStyle: {
+              backgroundColor: 'tomato',  
+            },
+            headerLeft:null,
+            headerTintColor: '#fff',
+            headerTitleStyle: {
+              fontWeight: 'bold',
+            },
+
+          }}
+        />
+      </Stack.Navigator>
+    )
+  }
 }
 
 // function BookingScreen(){
@@ -61,12 +83,36 @@ function BookingScreen(){
   )
 }
 
+/*
 function ProfileScreen () {
     return (
             <CustomerProfile/>
     )
 }
-export class AbourScreen extends Component{
+*/
+class ProfileScreen extends Component{
+  render(){
+    return(
+      <Stack.Navigator>
+        <Stack.Screen name="CustomerProfile" component={CustomerProfile}
+          options={{
+            headerStyle: {
+              backgroundColor: 'tomato',  
+            },
+            headerLeft:null,
+            headerTintColor: '#fff',
+            headerTitleStyle: {
+              fontWeight: 'bold',
+            },
+
+          }}
+        />
+      </Stack.Navigator>
+    )
+  }
+}
+
+class AbourScreen extends Component{
   render(){
     return(
       <Stack.Navigator>
@@ -87,7 +133,7 @@ export class AbourScreen extends Component{
     )
   }
 }
-export class About extends Component {
+class About extends Component {
     constructor(props) {
       super(props);
       this.state = {

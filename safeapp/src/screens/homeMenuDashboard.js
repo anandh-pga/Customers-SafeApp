@@ -17,7 +17,7 @@ import { Title } from 'react-native-paper';
 
 
 
-export class Dashboard extends Component {
+class Dashboard extends Component {
     constructor() {
         super();
         this.state={
