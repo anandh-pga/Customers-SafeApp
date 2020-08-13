@@ -11,7 +11,7 @@ import {
 import Icon from 'react-native-vector-icons/FontAwesome';
 
 
-class Login extends Component {
+class loginScreen extends Component {
   render(){
     return(
       <View style={styles.container}>
@@ -125,4 +125,4 @@ const styles = StyleSheet.create({
 
 })
 
-export default Login
+export default loginScreen
