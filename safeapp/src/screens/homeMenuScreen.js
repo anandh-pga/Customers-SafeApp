@@ -67,7 +67,7 @@ class HomeScreen extends Component{
 //     )
 // }
 
-function BookingScreen(){
+function Booking(){
   return (
       <View style={styles.booking_container}>
         <View style={styles.active_list_view}>
@@ -83,13 +83,27 @@ function BookingScreen(){
   )
 }
 
-/*
-function ProfileScreen () {
-    return (
-            <CustomerProfile/>
-    )
+function BookingScreen(){
+  return(
+    <Stack.Navigator>
+      <Stack.Screen name="Booking" component={Booking}
+          options={{
+            headerStyle: {
+              backgroundColor: 'tomato',  
+            },
+            headerLeft:null,
+            headerTintColor: '#fff',
+            headerTitleStyle: {
+              fontWeight: 'bold',
+            },
+
+          }}
+        />
+    </Stack.Navigator>
+  )
 }
-*/
+
+
 class ProfileScreen extends Component{
   render(){
     return(
@@ -112,7 +126,7 @@ class ProfileScreen extends Component{
   }
 }
 
-class AbourScreen extends Component{
+class AboutScreen extends Component{
   render(){
     return(
       <Stack.Navigator>

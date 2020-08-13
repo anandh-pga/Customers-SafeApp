@@ -13,7 +13,6 @@ import {StyleSheet,View,Text,Image, TouchableOpacity,Alert} from 'react-native';
 // import BookingScreen from './homeprofile';
 import NotificationsCarousal from './notificationCorousal';
 import OfferCarousal from './offerCorousal';
-import { Title } from 'react-native-paper';
 
 
 
