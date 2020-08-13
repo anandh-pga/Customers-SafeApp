@@ -2,6 +2,8 @@ import 'react-native-gesture-handler';
 import React,{Component} from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+import { createStackNavigator} from '@react-navigation/stack';
+
 import call from 'react-native-phone-call';
 import { View,
     Text,
@@ -16,6 +18,8 @@ import CustomerProfile from './homeMenuCustomerProfile';
 import BookingTobTab from './bookingTobTab';
 import BookingModal from './bookingModal'
 
+
+const Stack = createStackNavigator();
 
 
 function HomeScreen(){
@@ -62,8 +66,28 @@ function ProfileScreen () {
             <CustomerProfile/>
     )
 }
+export class AbourScreen extends Component{
+  render(){
+    return(
+      <Stack.Navigator>
+        <Stack.Screen name="About" component={About}
+          options={{
+            headerStyle: {
+              backgroundColor: 'tomato',  
+            },
+            headerLeft:null,
+            headerTintColor: '#fff',
+            headerTitleStyle: {
+              fontWeight: 'bold',
+            },
 
-export class AboutScreen extends Component {
+          }}
+        />
+      </Stack.Navigator>
+    )
+  }
+}
+export class About extends Component {
     constructor(props) {
       super(props);
       this.state = {
@@ -275,26 +299,27 @@ const styles = StyleSheet.create({
 
 
 const AppTabs = createBottomTabNavigator();
-const AppTabsScreen=()=> (
-    
-        <AppTabs.Navigator
-          initialRouteName="Home"
-          barStyle={{ backgroundColor: 'tomato' }}
-          tabBarOptions={{
-            activeTintColor: 'tomato',
-            inactiveTintColor: '#808080',
-            style: {
-                backgroundColor: 'white',
-              },
 
-              labelStyle: {        
-                fontSize: 12,        
-               }    
-          }}
-          screenOptions={{
-            headerStyle:'tomato'
-          }}
-        >
+const AppTabsScreen = () => (
+    
+      <AppTabs.Navigator
+        initialRouteName="Home"
+        barStyle={{ backgroundColor: 'tomato' }}
+        tabBarOptions={{
+          activeTintColor: 'tomato',
+          inactiveTintColor: '#808080',
+          style: {
+              backgroundColor: 'white',
+            },
+
+            labelStyle: {        
+              fontSize: 12,        
+              }    
+        }}
+        screenOptions={{
+          headerStyle:'tomato'
+        }}
+      >
 
         <AppTabs.Screen 
             name='Home'
@@ -345,15 +370,22 @@ const AppTabsScreen=()=> (
             ),
             }}
         />
-        </AppTabs.Navigator>
-        )
+      </AppTabs.Navigator>
+)
 
-    export default ()=>(
-        <NavigationContainer>
-        <AppTabsScreen/>
-    </NavigationContainer>
-    )
-    
+export default function homeMenuScreen() {
+  return (
+    <AppTabsScreen />
+  );
+}
+
+/*
+export default ()=>(
+    <NavigationContainer>
+    <AppTabsScreen/>
+</NavigationContainer>
+)
+*/ 
     
   
   

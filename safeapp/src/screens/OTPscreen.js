@@ -105,7 +105,7 @@ export default class OTPScreen extends Component {
                     this.setState({pin4:pin4})
                     if(this.pin4!=""){
                         alert("otp registration successful")
-                        this.props.navigation.push('Menu');
+                        this.props.navigation.push('homeMenuScreen');
                         //    {()=>Actions.registrationform()}
                     }
                   }}

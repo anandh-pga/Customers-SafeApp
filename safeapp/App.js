@@ -7,6 +7,7 @@ import { createStackNavigator } from '@react-navigation/stack';
 
 import loginScreen from './src/screens/loginScreen';
 import OTPScreen from './src/screens/OTPscreen';
+import homeMenuScreen from './src/screens/homeMenuScreen';
 
 const Stack = createStackNavigator();
 
@@ -16,6 +17,7 @@ export default function App() {
       <Stack.Navigator screenOptions={{ headerShown:false }}>    
         <Stack.Screen name="loginScreen" component={loginScreen} />
         <Stack.Screen name="OTPScreen" component={OTPScreen} />
+        <Stack.Screen name="homeMenuScreen" component={homeMenuScreen} />
       </Stack.Navigator>
     </NavigationContainer>
   );
