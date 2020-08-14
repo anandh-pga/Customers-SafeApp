@@ -71,37 +71,35 @@ function Booking(){
   return (
       <View style={styles.booking_container}>
         <View style={styles.active_list_view}>
-            <BookingTobTab/>
+            <BookingTobTab/>    
 
         </View>
         <View style={styles.add_new}>
           <BookingModal/>
-
         </View>
-      
       </View>
   )
 }
 
-function BookingScreen(){
-  return(
-    <Stack.Navigator>
-      <Stack.Screen name="Booking" component={Booking}
-          options={{
-            headerStyle: {
-              backgroundColor: 'tomato',  
-            },
-            headerLeft:null,
-            headerTintColor: '#fff',
-            headerTitleStyle: {
-              fontWeight: 'bold',
-            },
+// function BookingScreen(){
+//   return(
+//     <Stack.Navigator>
+//       <Stack.Screen name="Booking" component={Booking}
+//           options={{
+//             headerStyle: {
+//               backgroundColor: 'tomato',  
+//             },
+//             headerLeft:null,
+//             headerTintColor: '#fff',
+//             headerTitleStyle: {
+//               fontWeight: 'bold',
+//             },
 
-          }}
-        />
-    </Stack.Navigator>
-  )
-}
+//           }}
+//         />
+//     </Stack.Navigator>
+//   )
+// }
 
 
 class ProfileScreen extends Component{
@@ -396,7 +394,7 @@ const AppTabsScreen = () => (
 
           <AppTabs.Screen 
           name="Booking" 
-          component={BookingScreen} 
+          component={Booking} 
      options={{
                 tabBarLabel: 'Booking',
                 tabBarIcon: ({ color }) => (

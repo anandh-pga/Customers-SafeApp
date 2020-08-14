@@ -10,9 +10,8 @@
 
 // export default Active;
 
-import React from 'react'
+import React, { Component } from 'react'
 import { Text, View,StyleSheet,ScrollView,SafeAreaView } from 'react-native'
-import { NavigationContainer } from '@react-navigation/native';
 import { createMaterialTopTabNavigator } from '@react-navigation/material-top-tabs';
 import { Card} from 'react-native-elements'
 
@@ -159,13 +158,17 @@ function ActiveScreen() {
   
   const Tab = createMaterialTopTabNavigator();
   
-  export default function BookingTab() {
-    return (
+  export default class BookingTobTab extends Component() {
+    render()
+    {
+      return (
         <Tab.Navigator>
           <Tab.Screen name="Active" component={ActiveScreen} />
           <Tab.Screen name="Past" component={PastScreen} />
         </Tab.Navigator>
     );
+    }
+
   }
 
 
